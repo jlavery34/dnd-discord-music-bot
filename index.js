@@ -79,7 +79,6 @@ client.on('messageCreate', async (message) => {
       else if (message.content.startsWith('!resume')) {
         if (player.state.status === AudioPlayerStatus.Paused) {
           player.unpause();
-          message.react('⏯️');
         } else {
           message.reply('The player is not paused.');
         }
