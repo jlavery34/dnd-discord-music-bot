@@ -41,7 +41,7 @@ client.on('messageCreate', async (message) => {
         else if (message.content.toLowerCase().includes("elder scrolls")){
             songPath = eso;
         }
-        else if(message.content.toLowerCase().includes("baldurs gate" || "baldur's gate" || "bg3")){
+        else if(message.content.toLowerCase().includes("baldurs gate") || message.content.toLowerCase().includes("baldur's gate")){
           songPath = bg3;
         }
         else{
