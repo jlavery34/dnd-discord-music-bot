@@ -10,6 +10,7 @@ const criticalRole = "./songs/criticalrole_downtime.m4a";
 const skyrim = "./songs/skyrim.m4a";
 const witcher = "./songs/witcher_downtime.m4a";
 const eso = "./songs/eso_lucky_cat_landing.m4a"
+const bg3 = "./songs/raphaels_final_act.m4a"
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -39,6 +40,9 @@ client.on('messageCreate', async (message) => {
         }
         else if (message.content.toLowerCase().includes("elder scrolls")){
             songPath = eso;
+        }
+        else if(message.content.toLowerCase().includes("baldurs gate" || "baldur's gate" || "bg3")){
+          songPath = bg3;
         }
         else{
             songPath = skyrim; //set a default here as well in case someone just enters !play without another song
@@ -87,11 +91,12 @@ client.on('messageCreate', async (message) => {
       else if (message.content.startsWith('!help')) {
         message.reply(
 `Play a song: !play + song
-Song options:
+Songs from:
 - Skyrim
 - Witcher
 - Critical Role
 - Elder Scrolls Online
+- Baldur's Gate
 Stop the player: !stop
 Help message: !help`
         )
