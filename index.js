@@ -11,6 +11,7 @@ const skyrim = "./songs/skyrim.m4a";
 const witcher = "./songs/witcher_downtime.m4a";
 const eso = "./songs/eso_lucky_cat_landing.m4a"
 const bg3 = "./songs/raphaels_final_act.m4a"
+const oblivion = "./songs/oblivion.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -21,6 +22,14 @@ client.once('ready', () => {
     console.log(`${client.user.tag} is online!`);
 });
 
+client.on("voiceStateUpdate", (oldState, newState) => {
+  const voiceChannel = oldState.channel || newState.channel;
+  if (voiceChannel && voiceChannel.members.size === 0) {
+      voiceChannel.connection.disconnect();
+  }
+});
+
+
 client.on('messageCreate', async (message) => {
     var songPath;
     if (message.content.startsWith('!play')) {
@@ -29,6 +38,8 @@ client.on('messageCreate', async (message) => {
         if (!voiceChannel) {
             return message.reply('You need to join a voice channel to play music');
         }
+
+        //should probs tidy this into a switch case now that it's getting long
         if(message.content.toLowerCase().includes("skyrim")){
             songPath = skyrim;
         }
@@ -44,7 +55,11 @@ client.on('messageCreate', async (message) => {
         else if(message.content.toLowerCase().includes("baldurs gate") || message.content.toLowerCase().includes("baldur's gate")){
           songPath = bg3;
         }
+        else if(message.content.toLowerCase().includes("oblivion")){
+          songPath = oblivion;
+        }
         else{
+          message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
             songPath = skyrim; //set a default here as well in case someone just enters !play without another song
         }
         try {
@@ -102,6 +117,9 @@ Help message: !help`
         )
       }
 });
+
+
+
 
 //then start the bot with "node index.js" in vscode or with "pm2 start index.js" to have it running full-time on a raspberry pi
 client.login(token);
