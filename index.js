@@ -12,6 +12,7 @@ const witcher = "./songs/witcher_downtime.m4a";
 const eso = "./songs/eso_lucky_cat_landing.m4a"
 const bg3 = "./songs/raphaels_final_act.m4a"
 const oblivion = "./songs/oblivion.m4a";
+const rosymorn = "./songs/rosymorn_monastery.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -57,6 +58,9 @@ client.on('messageCreate', async (message) => {
         }
         else if(message.content.toLowerCase().includes("oblivion")){
           songPath = oblivion;
+        }
+        else if(message.content.toLowerCase().includes("rosymorn")){
+          songPath = rosymorn;
         }
         else{
           message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -112,6 +116,8 @@ Songs from:
 - Critical Role
 - Elder Scrolls Online
 - Baldur's Gate
+- Oblivion
+- Rosymorn Monastery
 Stop the player: !stop
 Help message: !help`
         )
