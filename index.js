@@ -54,7 +54,7 @@ client.on('messageCreate', async (message) => {
     else if (message.content.toLowerCase().includes("elder scrolls")) {
       songPath = eso;
     }
-    else if (message.content.toLowerCase().includes("baldurs gate") || message.content.toLowerCase().includes("baldur's gate")) {
+    else if (message.content.toLowerCase().includes("raphael's final act") || message.content.toLowerCase().includes("raphaels final act")) {
       songPath = bg3;
     }
     else if (message.content.toLowerCase().includes("oblivion")) {
@@ -132,7 +132,7 @@ Songs from:
 - Witcher
 - Critical Role
 - Elder Scrolls Online
-- Baldur's Gate
+- Raphael's Final Act
 - Oblivion
 - Rosymorn Monastery
 Stop the player: !stop
