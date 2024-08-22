@@ -14,6 +14,10 @@ const bg3 = "./songs/raphaels_final_act.m4a"
 const oblivion = "./songs/oblivion.m4a";
 const rosymorn = "./songs/rosymorn_monastery.m4a";
 const chappell = "./songs/chappell_good_luck.m4a";
+const rivers = "./songs/rivers_in_the_desert.m4a";
+const preliator = "./songs/preliator.m4a";
+const droplets = "./songs/temple_of_droplets.m4a";
+const finalFantasy = "./songs/final_fantasy_battle.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -65,6 +69,18 @@ client.on('messageCreate', async (message) => {
     }
     else if (message.content.toLowerCase().includes("test chappell")) {
       songPath = chappell;
+    }
+    else if (message.content.toLowerCase().includes("final fantasy")) {
+      songPath = finalFantasy;
+    }
+    else if (message.content.toLowerCase().includes("temple of droplets")) {
+      songPath = droplets;
+    }
+    else if (message.content.toLowerCase().includes("rivers in the desert")) {
+      songPath = rivers;
+    }
+    else if (message.content.toLowerCase().includes("preliator")) {
+      songPath = preliator;
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -135,6 +151,10 @@ Songs from:
 - Raphael's Final Act
 - Oblivion
 - Rosymorn Monastery
+- Rivers in the Desert
+- Final Fantasy Battle
+- Preliator
+- Temple of Droplets
 Stop the player: !stop
 Help message: !help`
     )
