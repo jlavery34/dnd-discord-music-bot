@@ -18,6 +18,7 @@ const rivers = "./songs/rivers_in_the_desert.m4a";
 const preliator = "./songs/preliator.m4a";
 const droplets = "./songs/temple_of_droplets.m4a";
 const finalFantasy = "./songs/final_fantasy_battle.m4a";
+const lifeWillChange = "./songs/life_will_change.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -81,6 +82,9 @@ client.on('messageCreate', async (message) => {
     }
     else if (message.content.toLowerCase().includes("preliator")) {
       songPath = preliator;
+    }
+    else if (message.content.toLowerCase().includes("life will change")) {
+      songPath = lifeWillChange;
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -155,6 +159,8 @@ Songs from:
 - Final Fantasy Battle
 - Preliator
 - Temple of Droplets
+- Rivers in the Desert
+- Life Will Change
 Stop the player: !stop
 Help message: !help`
     )
