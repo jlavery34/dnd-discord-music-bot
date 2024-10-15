@@ -20,6 +20,7 @@ const droplets = "./songs/temple_of_droplets.m4a";
 const finalFantasy = "./songs/final_fantasy_battle.m4a";
 const lifeWillChange = "./songs/life_will_change.m4a";
 const classical = "./songs/classical.m4a";
+const oblDungeon = "./songs/oblivion_dungeon.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -89,6 +90,9 @@ client.on('messageCreate', async (message) => {
     }
     else if (message.content.toLowerCase().includes("classical")) {
       songPath = classical; //please make this a switch asap 
+    }
+    else if (message.content.toLowerCase().includes("classical")) {
+      songPath = oblDungeon; //please make this a switch asap 
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -166,6 +170,7 @@ Songs from:
 - Rivers in the Desert
 - Life Will Change
 - Classical Party Music
+- Oblivion Dungeon
 Stop the player: !stop
 Help message: !help`
     )
