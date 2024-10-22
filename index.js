@@ -91,7 +91,7 @@ client.on('messageCreate', async (message) => {
     else if (message.content.toLowerCase().includes("classical")) {
       songPath = classical; //please make this a switch asap 
     }
-    else if (message.content.toLowerCase().includes("classical")) {
+    else if (message.content.toLowerCase().includes("dungeon")) {
       songPath = oblDungeon; //please make this a switch asap 
     }
     else {
