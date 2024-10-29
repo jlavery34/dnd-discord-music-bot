@@ -22,6 +22,7 @@ const lifeWillChange = "./songs/life_will_change.m4a";
 const classical = "./songs/classical.m4a";
 const oblDungeon = "./songs/oblivion_dungeon.m4a";
 const freeBird = "./songs/free_bird.m4a";
+const dark = "./songs/dark_fantasy.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -97,6 +98,9 @@ client.on('messageCreate', async (message) => {
     }
     else if (message.content.toLowerCase().includes("bird")){
       songPath = freeBird;
+    }
+    else if (message.content.toLowerCase().includes("dark fantasy playlist")){
+      songPath = dark;
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -176,6 +180,7 @@ Songs from:
 - Classical Party Music
 - Oblivion Dungeon
 - Bird
+- Dark Fantasy Playlist
 Stop the player: !stop
 Help message: !help`
     )
