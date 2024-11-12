@@ -23,6 +23,8 @@ const classical = "./songs/classical.m4a";
 const oblDungeon = "./songs/oblivion_dungeon.m4a";
 const freeBird = "./songs/free_bird.m4a";
 const dark = "./songs/dark_fantasy.m4a";
+const wildHunt = "./songs/witcher_wild_hunt.m4a";
+const dungeonExploration = "./songs/dungeon-exploration.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -101,6 +103,12 @@ client.on('messageCreate', async (message) => {
     }
     else if (message.content.toLowerCase().includes("dark fantasy playlist")){
       songPath = dark;
+    }
+    else if (message.content.toLowerCase().includes("Wild Hunt")){
+      songPath = wildHunt;
+    }
+    else if (message.content.toLowerCase().includes("Dungeon Exploration")){
+      songPath = dungeonExploration;
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -181,6 +189,8 @@ Songs from:
 - Oblivion Dungeon
 - Bird
 - Dark Fantasy Playlist
+- Wild Hunt
+- Dungeon Exploration
 Stop the player: !stop
 Help message: !help`
     )
