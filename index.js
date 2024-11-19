@@ -104,10 +104,10 @@ client.on('messageCreate', async (message) => {
     else if (message.content.toLowerCase().includes("dark fantasy playlist")){
       songPath = dark;
     }
-    else if (message.content.toLowerCase().includes("Wild Hunt")){
+    else if (message.content.toLowerCase().includes("wild hunt")){
       songPath = wildHunt;
     }
-    else if (message.content.toLowerCase().includes("Dungeon Exploration")){
+    else if (message.content.toLowerCase().includes("dungeon exploration")){
       songPath = dungeonExploration;
     }
     else {
