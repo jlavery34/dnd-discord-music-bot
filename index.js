@@ -178,7 +178,7 @@ client.on('messageCreate', async (message) => {
   //finally, update the help message with the song options
   else if (message.content.startsWith('!help')) {
     message.reply(
-      `Play a song: !play + song
+      `Play a song: !play + song (no need to include the bracketed section)
 Songs from:
 - Skyrim (roleplay)
 - Witcher (roleplay)
