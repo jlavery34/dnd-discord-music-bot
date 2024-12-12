@@ -25,6 +25,8 @@ const freeBird = "./songs/free_bird.m4a";
 const dark = "./songs/dark_fantasy.m4a";
 const wildHunt = "./songs/witcher_wild_hunt.m4a";
 const dungeonExploration = "./songs/dungeon-exploration.m4a";
+const christmas = "./songs/christmas.m4a";
+const dieYoung = "./songs/kesha_dieyoung.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -62,7 +64,7 @@ client.on('messageCreate', async (message) => {
     else if (message.content.toLowerCase().includes("witcher")) {
       songPath = witcher;
     }
-    else if (message.content.toLowerCase().includes("elder scrolls")) {
+    else if (message.content.toLowerCase().includes("eso")) {
       songPath = eso;
     }
     else if (message.content.toLowerCase().includes("raphael's final act") || message.content.toLowerCase().includes("raphaels final act")) {
@@ -109,6 +111,12 @@ client.on('messageCreate', async (message) => {
     }
     else if (message.content.toLowerCase().includes("dungeon exploration")){
       songPath = dungeonExploration;
+    }
+    else if (message.content.toLowerCase().includes("christmas")){
+      songPath = christmas;
+    }
+    else if (message.content.toLowerCase().includes("die young")){
+      songPath = dieYoung;
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -172,25 +180,22 @@ client.on('messageCreate', async (message) => {
     message.reply(
       `Play a song: !play + song
 Songs from:
-- Skyrim
-- Witcher
-- Critical Role
-- Elder Scrolls Online
-- Raphael's Final Act
-- Oblivion
-- Rosymorn Monastery
-- Rivers in the Desert
-- Final Fantasy Battle
-- Preliator
-- Temple of Droplets
-- Rivers in the Desert
-- Life Will Change
-- Classical Party Music
-- Oblivion Dungeon
-- Bird
-- Dark Fantasy Playlist
-- Wild Hunt
-- Dungeon Exploration
+- Skyrim (roleplay)
+- Witcher (roleplay)
+- Critical Role (combat)
+- ESO Lucky Cat Landing (roleplay)
+- Raphael's Final Act (combat)
+- Oblivion (roleplay)
+- Rosymorn Monastery (roleplay)
+- Final Fantasy Battle (combat)
+- Temple of Droplets (roleplay)
+- Classical Party Music (roleplay)
+- Oblivion Dungeon (roleplay)
+- Dark Fantasy Playlist (roleplay)
+- Wild Hunt - Novigrad Dreaming (roleplay?)
+- Dungeon Exploration (roleplay)
+- Christmas (roleplay)
+- Die Young (Kesha)
 Stop the player: !stop
 Help message: !help`
     )
