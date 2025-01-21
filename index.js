@@ -27,6 +27,10 @@ const wildHunt = "./songs/witcher_wild_hunt.m4a";
 const dungeonExploration = "./songs/dungeon-exploration.m4a";
 const christmas = "./songs/christmas.m4a";
 const dieYoung = "./songs/kesha_dieyoung.m4a";
+const beneathTheMaskRain = "./songs/beneath_the_mask_rain.m4a";
+const challengeExtended = "./songs/challenge_extended_ffx.m4a";
+const warriorsInValour = "./songs/warriors_in_valour.m4a"
+const oldCastleTownMartira = "./songs/old_castle_town_martira.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -112,11 +116,17 @@ client.on('messageCreate', async (message) => {
     else if (message.content.toLowerCase().includes("dungeon exploration")){
       songPath = dungeonExploration;
     }
-    else if (message.content.toLowerCase().includes("christmas")){
-      songPath = christmas;
+    else if (message.content.toLowerCase().includes("warriors in valour")){
+      songPath = warriorsInValour;
     }
-    else if (message.content.toLowerCase().includes("die young")){
-      songPath = dieYoung;
+    else if (message.content.toLowerCase().includes("old castle town martira")){
+      songPath = oldCastleTownMartira;
+    }
+    else if (message.content.toLowerCase().includes("beneath the mask")){
+      songPath = beneathTheMaskRain;
+    }
+    else if (message.content.toLowerCase().includes("challenge extended")){
+      songPath = challengeExtended;
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -194,8 +204,10 @@ Songs from:
 - Dark Fantasy Playlist (roleplay)
 - Wild Hunt - Novigrad Dreaming (roleplay?)
 - Dungeon Exploration (roleplay)
-- Christmas (roleplay)
-- Die Young (Kesha)
+- Beneath the Mask (roleplay)
+- Old Castle Town Martira (roleplay)
+- Challenge Extended FFX (combat)
+- Warriors in Valour (combat)
 Stop the player: !stop
 Help message: !help`
     )
