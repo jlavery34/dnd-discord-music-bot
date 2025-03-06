@@ -31,6 +31,7 @@ const beneathTheMaskRain = "./songs/beneath_the_mask_rain.m4a";
 const challengeExtended = "./songs/challenge_extended_ffx.m4a";
 const warriorsInValour = "./songs/warriors_in_valour.m4a"
 const oldCastleTownMartira = "./songs/old_castle_town_martira.m4a";
+const miseryBusiness = "./songs/misery_business.m4a";
 //then add them to the if statements in the client.on method below
 
 const client = new Client({
@@ -74,7 +75,7 @@ client.on('messageCreate', async (message) => {
     else if (message.content.toLowerCase().includes("raphael's final act") || message.content.toLowerCase().includes("raphaels final act")) {
       songPath = bg3;
     }
-    else if (message.content.toLowerCase().includes("oblivion")) {
+    else if (message.content.toLowerCase().includes("oblivion downtime")) {
       songPath = oblivion;
     }
     else if (message.content.toLowerCase().includes("rosymorn")) {
@@ -101,7 +102,7 @@ client.on('messageCreate', async (message) => {
     else if (message.content.toLowerCase().includes("classical")) {
       songPath = classical; //please make this a switch asap 
     }
-    else if (message.content.toLowerCase().includes("dungeon")) {
+    else if (message.content.toLowerCase().includes("oblivion dungeon")) {
       songPath = oblDungeon; //please make this a switch asap 
     }
     else if (message.content.toLowerCase().includes("bird")){
@@ -127,6 +128,9 @@ client.on('messageCreate', async (message) => {
     }
     else if (message.content.toLowerCase().includes("challenge extended")){
       songPath = challengeExtended;
+    }
+    else if (message.content.toLowerCase().includes("misery business")){
+      songPath = miseryBusiness;
     }
     else {
       message.reply("Song not found. Enter !help to see the full track list. Playing default track (Skyrim)...");
@@ -195,7 +199,7 @@ Songs from:
 - Critical Role (combat)
 - ESO Lucky Cat Landing (roleplay)
 - Raphael's Final Act (combat)
-- Oblivion (roleplay)
+- Oblivion Downtime (roleplay)
 - Rosymorn Monastery (roleplay)
 - Final Fantasy Battle (combat)
 - Temple of Droplets (roleplay)
@@ -208,6 +212,7 @@ Songs from:
 - Old Castle Town Martira (roleplay)
 - Challenge Extended FFX (combat)
 - Warriors in Valour (combat)
+- Misery Business
 Stop the player: !stop
 Help message: !help`
     )
